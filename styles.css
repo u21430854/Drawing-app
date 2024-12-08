@@ -1,0 +1,133 @@
+* { 
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#tools {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: rgba(169, 169, 169, 0.502);
+  display: flex;
+  align-items: center;
+  padding: 10px 7px;
+  box-sizing: border-box;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+#tools.hidden {
+  opacity: 0;
+}
+
+#tools:hover {
+  opacity: 1;
+}
+
+.colour {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #a3a3a3;
+  margin-left: 7px;
+  cursor: pointer;
+}
+
+.colour:first-child { margin: 0; }
+
+#red { background-color: #ff0000; }
+
+#blue { background-color: #0000ff; }
+
+#yellow { background-color: #ffff00; }
+
+#colourInput {
+  width: 30px;
+  height: 30px;
+  margin-left: 7px;
+  border: 1px solid #a3a3a3;
+  cursor: pointer;
+}
+
+#pencilTool, #eraserTool {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.icon { 
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+.slider {
+  display: inline-block;
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 90px;
+  height: 7px;
+  background-color: white;
+  outline: none;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-left: 7px;
+}
+
+#eraserSizeSlider { width: 100px; }
+
+.sliderValue { margin-left: 7px; }
+
+#thicknessDisplay {
+  margin-left: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: black;
+  display: inline-block;
+}
+
+#eraserSizeDisplay {
+  margin-left: 7px;
+  width: 12.5px; /* 1/4 of eraser size because tool bar height is 50px but eraser can reach 100px */
+  height: 12.5px;
+  border: 1px solid #a3a3a3;
+  background-color: white;
+  display: inline-block;
+}
+
+#clear, #clear:hover {
+  margin-left: 30px;
+  outline: none;
+  background-color: #bc560a;
+  color: white;
+  border: none;
+  padding: 7px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+
+#clear:hover {
+  background-color: white;
+  border: 1px solid #bc560a;
+  color: #bc560a;
+}
+
+#eraserCursor {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border: 1.5px solid #a3a3a3;
+  background-color: white;
+  pointer-events: none;
+  display: none;
+}
