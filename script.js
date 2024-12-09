@@ -122,6 +122,8 @@ window.addEventListener('load', () => {
     eraserCursor.style.display = 'none';
 
     //display pencil controls
+    btnPencil.classList.add('active');
+    btnEraser.classList.remove('active');
     let pencilTool = document.getElementById('pencilTool');
     pencilTool.classList.add('visible');
     let eraserTool = document.getElementById('eraserTool');
@@ -133,6 +135,8 @@ window.addEventListener('load', () => {
     canvas.style.cursor = 'none'; //hide default cursor
 
     //display eraser controls
+    btnPencil.classList.remove('active');
+    btnEraser.classList.add('active');
     let pencilTool = document.getElementById('pencilTool');
     pencilTool.classList.remove('visible');
     let eraserTool = document.getElementById('eraserTool');
