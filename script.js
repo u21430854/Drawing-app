@@ -63,8 +63,8 @@ window.addEventListener('load', () => {
   let picker = document.getElementById('colourInput'); //get colour input
   let colourButtons = document.querySelectorAll('.colour'); //get all colour buttons
   //buttons to switch btwn pencil and eraser
-  let btnPencil = document.getElementById('pencil');
-  let btnEraser = document.getElementById('eraser');
+  let btnPencil = document.getElementById('btnPencil');
+  let btnEraser = document.getElementById('btnEraser');
 
   //clear canvas on button click
   document.getElementById('clear').addEventListener('click', () => {
@@ -122,6 +122,10 @@ window.addEventListener('load', () => {
     eraserCursor.style.display = 'none';
 
     //display pencil controls
+    let pencilTool = document.getElementById('pencilTool');
+    pencilTool.classList.add('visible');
+    let eraserTool = document.getElementById('eraserTool');
+    eraserTool.classList.remove('visible');
   });
 
   btnEraser.addEventListener('click', () => {
@@ -129,6 +133,10 @@ window.addEventListener('load', () => {
     canvas.style.cursor = 'none'; //hide default cursor
 
     //display eraser controls
+    let pencilTool = document.getElementById('pencilTool');
+    pencilTool.classList.remove('visible');
+    let eraserTool = document.getElementById('eraserTool');
+    eraserTool.classList.add('visible');
   });
 
   //ERASER  
