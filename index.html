@@ -12,10 +12,12 @@
   <div id="eraserCursor"></div>
 
   <div id="tools" class="tools">
-    <button class="colour" id="red" type="button"></button>
-    <button class="colour" id="blue" type="button"></button>
-    <button class="colour" id="yellow" type="button"></button>
-    <input type="color" class="colour-input" id="colourInput" value="#000000">
+    <button class="colour" id="red" type="button" aria-label="red"></button>
+    <button class="colour" id="blue" type="button" aria-label="blue"></button>
+    <button class="colour" id="yellow" type="button" aria-label="yellow"></button>
+    <label for="colourInput" id="lblColour" aria-label="Choose pencil colour">
+      <input type="color" id="colourInput" value="#000000">
+    </label>
     <div id="pencilTool">
       <button class="icon active" id="pencil">
         <!--FROM BOOTSTRAP ICONS-->
@@ -35,8 +37,8 @@
           <path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828zm2.121.707a1 1 0 0 0-1.414 0L4.16 7.547l5.293 5.293 4.633-4.633a1 1 0 0 0 0-1.414zM8.746 13.547 3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293z"/>
         </svg>
       </button>
-      <input type="range" id="eraserSizeSlider" value="50" min="1" max="100" step="1" class="slider">
-      <span id="eraserSize" class="sliderValue">50px</span>
+      <input type="range" id="eraserSizeSlider" value="20" min="1" max="100" step="1" class="slider">
+      <span id="eraserSize" class="sliderValue">20px</span>
       <div id="eraserSizeDisplay"></div>
     </div>
 

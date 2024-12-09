@@ -7,17 +7,17 @@ window.addEventListener('load', () => {
   window.addEventListener('resize', () => resizeCanvas(canvas)); //resize canvas whenever window is resized
 
   //HIDE TOOLBAR AFTER 5 SEC SO USERS KNOW IT'S THERE
-  setTimeout(() => {
+  /* setTimeout(() => {
     let toolbar = document.getElementById('tools');
     toolbar.classList.add('hidden'); // Add the 'hidden' class
-  }, 5000);
+  }, 5000); */
 
   /* DRAWING APP */
   let drawing = false; //keep track of whether we should be drawing (on click and drag)
   let lineThickness = 5;
   let pencilColour = '#000000';
   let eraser = false; //track whether user wants to erase
-  let eraserSize = 50;
+  let eraserSize = 20;
 
   function startDrawing(e) {
     drawing = true;
@@ -90,12 +90,13 @@ window.addEventListener('load', () => {
     //colour is optional parameter
     if (colour) {
       pencilColour = colour;
-      picker.value = colour;
+      picker.parentNode.style.backgroundColor = colour;
       return;
     }
 
     //if colour isn't specified, get it from colour picker
     pencilColour = picker.value;
+    picker.parentNode.style.backgroundColor = picker.value;
   }
 
   picker.addEventListener('input', () => {

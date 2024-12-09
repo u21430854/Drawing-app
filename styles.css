@@ -29,10 +29,10 @@
 }
 
 .colour {
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
-  border: 1px solid #a3a3a3;
+  border: 1px solid #b1b1b1;
   margin-left: 7px;
   cursor: pointer;
 }
@@ -45,13 +45,29 @@
 
 #yellow { background-color: #ffff00; }
 
-#colourInput {
-  width: 30px;
-  height: 30px;
+#lblColour {
+  width: 20px;
+  height: 20px;
   margin-left: 7px;
-  border: 1px solid #a3a3a3;
   cursor: pointer;
+  border-radius: 50%;
+  background-color: black;
+  position: relative;
 }
+
+#lblColour::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px;
+  height: 22px;
+  border-radius: inherit;
+  border: 1px solid #b1b1b1;
+}
+
+#lblColour input { display: none; }
 
 #pencilTool, #eraserTool {
   margin-left: 20px;
@@ -90,14 +106,14 @@
   appearance: none;
   width: 20px;
   height: 20px;
-  background: #a3a3a3;
+  background: #b1b1b1;
   border-radius: 50%;
 }
 
 .slider::-moz-range-thumb {
   width: 10px;
   height: 10px;
-  background: #a3a3a3;
+  background: #b1b1b1;
   border-radius: 50%;
 }
 
@@ -124,9 +140,9 @@
 
 #eraserSizeDisplay {
   margin-left: 7px;
-  width: 12.5px; /* 1/4 of eraser size because tool bar height is 50px but eraser can reach 100px */
-  height: 12.5px;
-  border: 1px solid #a3a3a3;
+  width: 5px; /* 1/4 of eraser size because tool bar height is 50px but eraser can reach 100px */
+  height: 5px;
+  border: 1px solid #b1b1b1;
   background-color: white;
   display: inline-block;
 }
@@ -153,7 +169,7 @@
   position: fixed;
   width: 50px;
   height: 50px;
-  border: 1.5px solid #a3a3a3;
+  border: 1.5px solid #b1b1b1;
   background-color: white;
   pointer-events: none;
   display: none;
