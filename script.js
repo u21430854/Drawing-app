@@ -7,12 +7,13 @@ window.addEventListener('load', () => {
   window.addEventListener('resize', () => resizeCanvas(canvas)); //resize canvas whenever window is resized
 
   //HIDE TOOLBAR AFTER 5 SEC SO USERS KNOW IT'S THERE
-  /* setTimeout(() => {
+  setTimeout(() => {
     let toolbar = document.getElementById('tools');
     toolbar.classList.add('hidden'); // Add the 'hidden' class
-  }, 5000); */
+  }, 5000);
 
   /* DRAWING APP */
+  //PENCIL LINES
   let drawing = false; //keep track of whether we should be drawing (on click and drag)
   let lineThickness = 5;
   let pencilColour = '#000000';
@@ -187,6 +188,15 @@ window.addEventListener('load', () => {
       ctx.clearRect(x - eraserSize / 2, y - eraserSize / 2, eraserSize, eraserSize);
     }
   }
+
+  //EXPORT canvas
+  document.getElementById('export').addEventListener('click', () => {
+    const dataUrl = canvas.toDataURL({format: 'png'});
+    const downloadLink = document.createElement('a');
+    downloadLink.href = dataUrl;
+    downloadLink.download = 'drawing.png';
+    downloadLink.click();
+  })
 
 });
 
