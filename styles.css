@@ -11,7 +11,7 @@
   left: 0;
   width: 100%;
   height: 50px;
-  background-color: rgba(169, 169, 169, 0.502);
+  background-color: rgba(201, 201, 201, 0.7);
   display: flex;
   align-items: center;
   padding: 10px 7px;
@@ -69,17 +69,44 @@
   cursor: pointer;
 }
 
+.icon.active, .icon:hover { color: #4a98f7; }
+
 .slider {
   display: inline-block;
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
   width: 90px;
-  height: 7px;
+  height: 5px;
   background-color: white;
   outline: none;
   border-radius: 7px;
   cursor: pointer;
   margin-left: 7px;
+}
+
+/* style slider handle in Chrome, Opera, Safari, Edge and Mozilla */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #a3a3a3;
+  border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: #a3a3a3;
+  border-radius: 50%;
+}
+
+.slider.active::-webkit-slider-thumb {
+  background: #4a98f7;
+}
+
+.slider.active::-moz-range-thumb {
+  background: #4a98f7;
 }
 
 #eraserSizeSlider { width: 100px; }
@@ -107,7 +134,7 @@
 #clear, #clear:hover {
   margin-left: 30px;
   outline: none;
-  background-color: #bc560a;
+  background-color: #4a98f7;
   color: white;
   border: none;
   padding: 7px 10px;
@@ -118,8 +145,8 @@
 
 #clear:hover {
   background-color: white;
-  border: 1px solid #bc560a;
-  color: #bc560a;
+  border: 1px solid #4a98f7;
+  color: #4a98f7;
 }
 
 #eraserCursor {

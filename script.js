@@ -57,6 +57,15 @@ window.addEventListener('load', () => {
   });
 
   /* TOOLBAR */
+  //variables
+  let pencilSlider = document.getElementById('thicknessSlider'); //pencil thickness range input
+  let eraserSlider = document.getElementById('eraserSizeSlider');
+  let picker = document.getElementById('colourInput'); //get colour input
+  let colourButtons = document.querySelectorAll('.colour'); //get all colour buttons
+  //buttons to switch btwn pencil and eraser
+  let btnPencil = document.getElementById('pencil');
+  let btnEraser = document.getElementById('eraser');
+
   //clear canvas on button click
   document.getElementById('clear').addEventListener('click', () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -64,7 +73,6 @@ window.addEventListener('load', () => {
 
   //PENCIL
   //change pencil thickness and display updated thickness as slider is updated
-  let pencilSlider = document.getElementById('thicknessSlider');
   pencilSlider.addEventListener('input', () => {
     lineThickness = Number(pencilSlider.value);
 
@@ -78,8 +86,6 @@ window.addEventListener('load', () => {
   });
 
   //change pencil colour
-  let picker = document.getElementById('colourInput'); //get colour input
-
   function changeColour(colour) {
     //colour is optional parameter
     if (colour) {
@@ -96,8 +102,6 @@ window.addEventListener('load', () => {
     changeColour();
   });
 
-  let colourButtons = document.querySelectorAll('.colour'); //get all colour buttons
-
   //change colour when colour btns are clicked
   colourButtons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -108,22 +112,34 @@ window.addEventListener('load', () => {
   });
 
   //Switch btwn pencil and eraser when icons are clicked
-  document.getElementById('pencil').addEventListener('click', () => {
+  btnPencil.addEventListener('click', () => {
     eraser = false;
     canvas.style.cursor = 'default'; //show default cursor
+
     //hide eraser cursor immediately pencil is clicked
     let eraserCursor = document.getElementById('eraserCursor');
     eraserCursor.style.display = 'none';
+
+    //make pencil icon and slider blue
+    btnPencil.classList.add('active');
+    pencilSlider.classList.add('active');
+    btnEraser.classList.remove('active');
+    eraserSlider.classList.remove('active');
   });
 
-  document.getElementById('eraser').addEventListener('click', () => {
+  btnEraser.addEventListener('click', () => {
     eraser = true;
     canvas.style.cursor = 'none'; //hide default cursor
+
+    //make eraser icon and slider blue
+    btnPencil.classList.remove('active');
+    pencilSlider.classList.remove('active');
+    btnEraser.classList.add('active');
+    eraserSlider.classList.add('active');
   });
 
   //ERASER  
   //Display eraser size in numbers and visually (box) as slider is updated
-  let eraserSlider = document.getElementById('eraserSizeSlider');
   eraserSlider.addEventListener('input', () => {
     eraserSize = Number(eraserSlider.value);
 
