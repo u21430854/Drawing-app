@@ -121,22 +121,14 @@ window.addEventListener('load', () => {
     let eraserCursor = document.getElementById('eraserCursor');
     eraserCursor.style.display = 'none';
 
-    //make pencil icon and slider blue
-    btnPencil.classList.add('active');
-    pencilSlider.classList.add('active');
-    btnEraser.classList.remove('active');
-    eraserSlider.classList.remove('active');
+    //display pencil controls
   });
 
   btnEraser.addEventListener('click', () => {
     eraser = true;
     canvas.style.cursor = 'none'; //hide default cursor
 
-    //make eraser icon and slider blue
-    btnPencil.classList.remove('active');
-    pencilSlider.classList.remove('active');
-    btnEraser.classList.add('active');
-    eraserSlider.classList.add('active');
+    //display eraser controls
   });
 
   //ERASER  
